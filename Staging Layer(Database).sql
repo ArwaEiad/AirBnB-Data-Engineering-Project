@@ -1,0 +1,128 @@
+CREATE TABLE listings (
+    id bigint,
+    listing_url varchar(50),
+    scrape_id bigint,
+    last_scraped date,
+    source varchar(50),
+    name varchar(100),
+    description varchar(1),
+    neighborhood_overview text,
+    picture_url varchar(250),
+    host_id bigint,
+    host_url varchar(50),
+    host_name varchar(50),
+    host_since date,
+    host_location varchar(50),
+    host_about text,
+    host_response_time varchar(50),
+    host_response_rate varchar(50),
+    host_acceptance_rate varchar(50),
+    host_is_superhost boolean,
+    host_thumbnail_url varchar(150),
+    host_picture_url varchar(150),
+    host_neighbourhood text,
+    host_listings_count int,
+    host_total_listings_count smallint,
+    host_verifications varchar(50),
+    host_has_profile_pic varchar(50),
+    host_identity_verified boolean,
+    neighbourhood varchar(50),
+    neighbourhood_cleansed varchar(50),
+    neighbourhood_group_cleansed varchar(50),
+    latitude float,
+    longitude float,
+    property_type varchar(50),
+    room_type varchar(50),
+    accommodates smallint,
+    bathrooms varchar(1),
+    bathrooms_text varchar(50),
+    bedrooms varchar(1),
+    beds smallint,
+    amenities varchar(50),
+    price varchar(20),
+    minimum_nights smallint,
+    maximum_nights smallint,
+    minimum_minimum_nights smallint,
+    maximum_minimum_nights smallint,
+    minimum_maximum_nights smallint,
+    maximum_maximum_nights smallint,
+    minimum_nights_avg_ntm float,
+    maximum_nights_avg_ntm float,
+    calendar_updated varchar(1),
+    has_availability varchar(50),
+    availability_30 smallint,
+    availability_60 smallint,
+    availability_90 smallint,
+    availability_365 smallint,
+    calendar_last_scraped date,
+    number_of_reviews smallint,
+    number_of_reviews_ltm int,
+    number_of_reviews_l30d int,
+    first_review date,
+    last_review date,
+    review_scores_rating float,
+    review_scores_accuracy float,
+    review_scores_cleanliness float,
+    review_scores_checkin float,
+    review_scores_communication float,
+    review_scores_location float,
+    review_scores_value float,
+    license text,
+    instant_bookable boolean,
+    calculated_host_listings_count int,
+    calculated_host_listings_count_entire_homes int,
+    calculated_host_listings_count_private_rooms int,
+    calculated_host_listings_count_shared_rooms smallint,
+    reviews_per_month float
+);
+
+CREATE TABLE calendar (
+    listing_id bigint,
+    date date,
+    available boolean,
+    price varchar(20),
+    adjusted_price varchar(20),
+    minimum_nights int,
+    maximum_nights int
+);
+
+CREATE TABLE reviews (
+    listing_id bigint,
+    id bigint,
+    date date,
+    reviewer_id bigint,
+    reviewer_name varchar(50),
+    comments text
+);
+
+create table neighbourhood(
+	neighbourhood_group varchar(25) ,
+	neighbourhood varchar(25)
+
+ );
+ 
+create table summary_reviews(
+	listing_id	bigint ,
+	date date
+ );
+
+create table summary_listings(
+id bigint,
+name	varchar(100),
+host_id	bigint,
+host_name varchar(50),
+neighbourhood_group	varchar(50),
+neighbourhood varchar(50),
+latitude float,
+longitude float,
+room_type varchar(50),
+price	varchar(20),
+minimum_nights	smallint,
+number_of_reviews smallint,
+last_review	date,
+reviews_per_month float,
+calculated_host_listings_count	int,
+availability_365 smallint,
+number_of_reviews_ltm	int,
+license text
+ );
