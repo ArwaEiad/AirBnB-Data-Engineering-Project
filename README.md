@@ -30,10 +30,15 @@
   - **(4) Identifying Facts**:
     - `Reservations Fact`: Contains data related to listing availability, price, and minimum/maximum nights for each listing on specific dates.
     - `Reviews Fact`: Stores data related to reviews for each listing, including review ID, date, reviewer details, and comments.
- - [See the Data Warehouse Design here]([docs/CONTRIBUTING.md](https://github.com/Arwa0/AirBnB-Data-Engineering-Project/tree/main/Data%20Warehouse%20Design#readme))
+ - [See the Data Warehouse Design here](https://github.com/Arwa0/AirBnB-Data-Engineering-Project/tree/main/Data%20Warehouse%20Design#readme)
 
 ## ETL process:
-This process done using python script , illustated in [this]([docs/CONTRIBUTING.md](https://github.com/Arwa0/AirBnB-Data-Engineering-Project/blob/main/ETL%20using%20python%20script.ipynb)https://github.com/Arwa0/AirBnB-Data-Engineering-Project/blob/main/ETL%20using%20python%20script.ipynb) jupyter notebook file
+- This process includes extracting data from the staging layer, converting each table into a **pandas DataFrame**, performing transformations such as removing leading and trailing whitespace from columns, changing some column datatypes to match the data warehouse, adding surrogate keys, etc. Then, the data is loaded back to the data warehouse on PostgreSQL.
+- You can find the code for the ETL process in [this](https://github.com/Arwa0/AirBnB-Data-Engineering-Project/blob/main/ETL%20using%20python%20script.ipynb) jupyter notebook file
+
+## Actionable Business Insights
+- Now, you can turn business questions into actionable business insights.
+- You can find the questions, along with their queries used to answer them, and the CSV files containing these insights in [this folder](https://github.com/Arwa0/AirBnB-Data-Engineering-Project/tree/main/Actionable%20Business%20Insights)
  
       
 
