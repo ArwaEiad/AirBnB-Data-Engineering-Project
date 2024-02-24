@@ -9,7 +9,6 @@
   		on  DDim.date_key = RFact."date_key" 
   		where DDim.month_name ='January' and DDim.year= 2024 and RFact.available= TRUE 
   		group by "listingKey"
-  		order by no_of_available_days_in_june desc
   		)	
   
   	select listing_id,no_of_available_days_in_june ,price as general_price, name, neighborhood_overview, picture_url, host_id, host_url, host_name, host_since, host_location, host_about, host_response_time, host_response_rate, host_acceptance_rate, host_is_superhost, host_picture_url, host_neighbourhood, host_listings_count, host_total_listings_count, host_verifications, host_identity_verified, neighbourhood_cleansed, neighbourhood_group_cleansed, latitude, longitude, property_type, room_type, accommodates, number_of_reviews, number_of_reviews_ltm, number_of_reviews_l30d, first_review, last_review, review_scores_rating, review_scores_accuracy, review_scores_cleanliness, review_scores_checkin, review_scores_communication, review_scores_location, review_scores_value, license, instant_bookable, reviews_per_month
@@ -17,7 +16,7 @@
   	inner join CTE
   	on LDim."listingKey" = CTE."listingKey"
   	where no_of_available_days_in_june > 15
-  	order by no_of_available_days_in_june desc ,general_price
+  	order by general_price ,no_of_available_days_in_june desc 
   ```
 
 	
